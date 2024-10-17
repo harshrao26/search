@@ -6,7 +6,7 @@ import logo from "/logo.png";
 
 const Footer = () => {
   return (
-    <footer className="bg-white text-[#2362AB] py-10 px-6 md:px-16 ">
+    <footer className="bg-white text-[#2362AB] py-10 px-6 md:px-8 ">
       <div className="max-w-7xl mx-auto">
         {/* Footer Content - Grid Layout for Desktop and Flex Column for Mobile */}
         <div className="grid grid-cols-1 md:grid-cols-5 gap-2 py-8 border-t-[3px] border-b-[3px]  border-blue-600">

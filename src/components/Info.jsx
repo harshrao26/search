@@ -31,7 +31,7 @@ const Info = () => {
             />
             <div>
               <h2 className="text-xl font-medium text-gray-700">Name</h2>
-              <p className="text-gray-500">123456</p>
+              <p className="text-gray-500">+91-7392037856</p>
             </div>
           </div>
 
