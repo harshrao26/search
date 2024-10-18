@@ -88,7 +88,7 @@ const Info = () => {
                 onClick={handleVerify}
                 className="bg-blue-500 text-white px-4 py-2 rounded-lg shadow hover:bg-blue-600 transition duration-300"
               >
-                Verify Mobile
+                Submit Enquiry
               </button>
             </div>
           ) : (
@@ -121,7 +121,7 @@ const Info = () => {
                 type="submit"
                 className="bg-green-500 text-white px-4 py-2 rounded-lg shadow hover:bg-green-600 transition duration-300"
               >
-                Submit Details
+                Submit Enquiry
               </button>
             </form>
           )}

@@ -14,17 +14,7 @@ const AboutProperty = () => {
         Commuting to this location is a breeze with on-site parking and easy
         connectivity with various modes of public transportation.
       </p>
-      <div className="mt-6">
-        <h3 className="text-xl font-semibold">Key Features</h3>
-        <ul className="list-disc list-inside">
-          <li>Surrounded by global businesses</li>
-          <li>Near Adarsh Palm Retreat</li>
-          <li>Art-decorated walls and vibrant lounges</li>
-          <li>Modern conference rooms and private cabins</li>
-          <li>On-site parking available</li>
-          <li>Well connected to public transportation</li>
-        </ul>
-      </div>
+     
     </div>
   );
 };
