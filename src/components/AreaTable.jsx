@@ -1,76 +1,86 @@
 import React from "react";
 
-const AreaTable = () => {
+const RentalProperties = () => {
+  const data = [
+    {
+      category: "Office",
+      building: "Jaipuria Towers",
+      floor: "BASEMENT FLOOR",
+      builtup: "5413.33",
+      carpet: "5139.69",
+      rentable: "-",
+    },
+    {
+      category: "Office",
+      building: "Jaipuria Towers",
+      floor: "GROUND FLOOR",
+      builtup: "7827.4",
+      carpet: "5247.73",
+      rentable: "7827.4",
+    },
+    {
+      category: "Office",
+      building: "Jaipuria Towers",
+      floor: "1ST FLOOR",
+      builtup: "7199.33",
+      carpet: "7031.69",
+      rentable: "7199.33",
+    },
+    {
+      category: "Office",
+      building: "Jaipuria Towers",
+      floor: "2ND FLOOR",
+      builtup: "5872.18",
+      carpet: "5635.4",
+      rentable: "5872.18",
+    },
+    {
+      category: "Office",
+      building: "Jaipuria Towers",
+      floor: "3RD FLOOR",
+      builtup: "7152.14",
+      carpet: "6908.39",
+      rentable: "7152.14",
+    },
+    {
+      category: "Office",
+      building: "Jaipuria Towers",
+      floor: "TERRACE FLOOR",
+      builtup: "6369.42",
+      carpet: "6369.42",
+      rentable: "-",
+    },
+  ];
+
   return (
-    <div className="container mx-auto mt-8">
-      <table className="table-auto border-collapse border border-gray-300">
+    <div className="container mx-auto  py-6">
+      <h2 className="text-2xl font-bold mb-4">Rental Properties</h2>
+      <table className="min-w-full bg-white border">
         <thead>
           <tr>
-            <th
-              colSpan="4"
-              className="text-center p-4 border-b border-gray-300 text-xl font-semibold"
-            >
-              AREA CALCULATION OF ALL FLOORS
-            </th>
-          </tr>
-          <tr className="bg-gray-200">
-            <th className="border border-gray-300 p-2">FLOORS</th>
-            <th className="border border-gray-300 p-2">
-              BUILTUP/ PLINTH AREA SFT
-            </th>
-            <th className="border border-gray-300 p-2">CARPET AREA SFT</th>
-            <th className="border border-gray-300 p-2">RENTABLE AREA SFT</th>
+            <th className="border px-4 py-2">Category</th>
+            <th className="border px-4 py-2">Building</th>
+            <th className="border px-4 py-2">Floor</th>
+            <th className="border px-4 py-2">Builtup/Plinth Area (SFT)</th>
+            <th className="border px-4 py-2">Carpet Area (SFT)</th>
+            <th className="border px-4 py-2">Rentable Area (SFT)</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td className="border border-gray-300 p-2">BASEMENT FLOOR</td>
-            <td className="border border-gray-300 p-2">5413.33</td>
-            <td className="border border-gray-300 p-2">5139.69</td>
-            <td className="border border-gray-300 p-2">-</td>
-          </tr>
-          <tr>
-            <td className="border border-gray-300 p-2">GROUND FLOOR</td>
-            <td className="border border-gray-300 p-2">7827.40</td>
-            <td className="border border-gray-300 p-2">5247.73</td>
-            <td className="border border-gray-300 p-2">7827.40</td>
-          </tr>
-          <tr>
-            <td className="border border-gray-300 p-2">1ST FLOOR</td>
-            <td className="border border-gray-300 p-2">7199.33</td>
-            <td className="border border-gray-300 p-2">7031.69</td>
-            <td className="border border-gray-300 p-2">7199.33</td>
-          </tr>
-          <tr>
-            <td className="border border-gray-300 p-2">2ND FLOOR</td>
-            <td className="border border-gray-300 p-2">5872.18</td>
-            <td className="border border-gray-300 p-2">5635.40</td>
-            <td className="border border-gray-300 p-2">5872.18</td>
-          </tr>
-          <tr>
-            <td className="border border-gray-300 p-2">3RD FLOOR</td>
-            <td className="border border-gray-300 p-2">7152.14</td>
-            <td className="border border-gray-300 p-2">6908.39</td>
-            <td className="border border-gray-300 p-2">7152.14</td>
-          </tr>
-          <tr>
-            <td className="border border-gray-300 p-2">TERRACE FLOOR</td>
-            <td className="border border-gray-300 p-2">6369.42</td>
-            <td className="border border-gray-300 p-2">6369.42</td>
-            <td className="border border-gray-300 p-2">-</td>
-          </tr>
+          {data.map((item, index) => (
+            <tr key={index} className="border">
+              <td className="border px-4 py-2">{item.category}</td>
+              <td className="border px-4 py-2">{item.building}</td>
+              <td className="border px-4 py-2">{item.floor}</td>
+              <td className="border px-4 py-2">{item.builtup}</td>
+              <td className="border px-4 py-2">{item.carpet}</td>
+              <td className="border px-4 py-2">{item.rentable}</td>
+            </tr>
+          ))}
         </tbody>
-        <tfoot>
-          <tr className="bg-gray-200 font-semibold">
-            <td className="border border-gray-300 p-2">TOTAL</td>
-            <td className="border border-gray-300 p-2">39,833.58</td>
-            <td className="border border-gray-300 p-2">36,233.32</td>
-            <td className="border border-gray-300 p-2">28,051.1</td>
-          </tr>
-        </tfoot>
       </table>
     </div>
   );
 };
 
-export default AreaTable;
+export default RentalProperties;

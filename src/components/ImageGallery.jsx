@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { MdArrowBackIos, MdArrowForwardIos } from "react-icons/md"; // for arrows
-
+import img from '../../public/img.png'
+import img2 from '../../public/img2.png'
+import img3 from '../../public/img3.png'
 const ImageCarousel = ({ images }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -70,29 +72,19 @@ const ImageCarousel = ({ images }) => {
 const ImageGallery = () => {
   const allImages = [
     {
-      url: "https://plus.unsplash.com/premium_photo-1672423154405-5fd922c11af2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YnVpbGRpbmd8ZW58MHx8MHx8fDA%3D",
+      url: img3,
       category: "architecture",
     },
     {
-      url: "https://plus.unsplash.com/premium_photo-1681412504590-5c23f9a04e3d?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      url: img2,
       category: "nature",
     },
     {
-      url: "https://plus.unsplash.com/premium_photo-1681412505317-6e76868785a5?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      url: img,
       category: "architecture",
     },
-    {
-      url: "https://plus.unsplash.com/premium_photo-1661340695541-ee1ca7efedd0?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      category: "nature",
-    },
-    {
-      url: "https://plus.unsplash.com/premium_photo-1725404428224-664f5f0217b3?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      category: "architecture",
-    },
-    {
-      url: "https://plus.unsplash.com/premium_photo-1694475113480-cf9c05b1f77e?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      category: "nature",
-    },
+
+    
   ];
 
   const [filteredImages, setFilteredImages] = useState(allImages);

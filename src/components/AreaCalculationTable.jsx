@@ -1,120 +1,62 @@
 import React from "react";
 
-const AreaCalculationTable = () => {
+const AreaCalculation = () => {
+  const data = {
+    "FAR Calculation": [
+      { title: "Total Site Area", areaM: "1152.79", areaSft: "12,408.58" },
+      {
+        title: "Number of Floors",
+        areaM: "G+3 (1 BASEMENT + GROUND FLOOR + 3 OFFICE FLOORS)",
+      },
+      { title: "Number of Entries", areaM: "2" },
+      { title: "Fire Exits", areaM: "1" },
+    ],
+    "Ground Coverage": [
+      { title: "Allowed Ground Coverage", areaM: "55%", areaSft: "6,824.60" },
+      {
+        title: "Achieved Ground Coverage",
+        areaM: "630.9",
+        areaSft: "6,791.77",
+      },
+    ],
+    "Car Parkings": [
+      { title: "Number of Car Parkings", areaM: "24" },
+      { title: "Number of Bike Parkings", areaM: "22" },
+    ],
+  };
+
   return (
-    <div className="container mx-auto mt-8">
-      <table className="min-w-full table-auto border-collapse border border-gray-300">
+    <div className="container mx-  py-6">
+      <h2 className="text-2xl font-bold mb-4">Area Calculation</h2>
+      <table className=" bg-white border">
         <thead>
           <tr>
-            <th
-              colSpan="3"
-              className="text-center p-4 border-b border-gray-300 text-xl font-semibold"
-            >
-              AREA CALCULATION
-            </th>
-          </tr>
-          <tr className="bg-gray-200">
-            <th className="border border-gray-300 p-2"></th>
-            <th className="border border-gray-300 p-2">AREA IN M²</th>
-            <th className="border border-gray-300 p-2">AREA IN SFT</th>
+            <th className="border px-4 py-2">Description</th>
+            <th className="border px-4 py-2">Area in M²</th>
+            <th className="border px-4 py-2">Area in SFT</th>
           </tr>
         </thead>
-
-        {/* FAR Calculation Section */}
         <tbody>
-          <tr>
-            <td
-              colSpan="3"
-              className="text-center font-bold p-2 border-b border-gray-300 bg-gray-100"
-            >
-              F A R CALCULATION
-            </td>
-          </tr>
-          <tr>
-            <td className="border border-gray-300 p-2">1. TOTAL SITE AREA</td>
-            <td className="border border-gray-300 p-2">1152.79</td>
-            <td className="border border-gray-300 p-2">12,408.58</td>
-          </tr>
-          <tr>
-            <td className="border border-gray-300 p-2">2. NUMBER OF FLOORS</td>
-            <td className="border border-gray-300 p-2" colSpan="2">
-              G+3 (1 BASEMENT + GROUND FLOOR + 3 OFFICE FLOORS)
-            </td>
-          </tr>
-          <tr>
-            <td className="border border-gray-300 p-2">3. NUMBER OF ENTRIES</td>
-            <td className="border border-gray-300 p-2" colSpan="2">
-              2
-            </td>
-          </tr>
-          <tr>
-            <td className="border border-gray-300 p-2">4. FIRE EXITS</td>
-            <td className="border border-gray-300 p-2" colSpan="2">
-              1
-            </td>
-          </tr>
-        </tbody>
-
-        {/* Ground Coverage Section */}
-        <tbody>
-          <tr>
-            <td
-              colSpan="3"
-              className="text-center font-bold p-2 border-b border-gray-300 bg-gray-100"
-            >
-              GROUND COVERAGE
-            </td>
-          </tr>
-          <tr>
-            <td className="border border-gray-300 p-2">
-              1. ALLOWED GROUND COVERAGE
-            </td>
-            <td className="border border-gray-300 p-2">55%</td>
-            <td className="border border-gray-300 p-2">6,824.6</td>
-          </tr>
-          <tr>
-            <td className="border border-gray-300 p-2">
-              2. ACHIEVED GROUND COVERAGE
-              <br />
-              <span className="text-xs">
-                6,791.77 ÷ 12,408.58 × 100 = 54.7%
-              </span>
-            </td>
-            <td className="border border-gray-300 p-2">630.9</td>
-            <td className="border border-gray-300 p-2">6,791.77</td>
-          </tr>
-        </tbody>
-
-        {/* Car Parkings Section */}
-        <tbody>
-          <tr>
-            <td
-              colSpan="3"
-              className="text-center font-bold p-2 border-b border-gray-300 bg-gray-100"
-            >
-              CAR PARKINGS
-            </td>
-          </tr>
-          <tr>
-            <td className="border border-gray-300 p-2">
-              1. NUMBER OF CAR PARKINGS
-            </td>
-            <td className="border border-gray-300 p-2" colSpan="2">
-              24
-            </td>
-          </tr>
-          <tr>
-            <td className="border border-gray-300 p-2">
-              2. NUMBER OF BIKE PARKINGS
-            </td>
-            <td className="border border-gray-300 p-2" colSpan="2">
-              22
-            </td>
-          </tr>
+          {Object.keys(data).map((section, index) => (
+            <React.Fragment key={index}>
+              <tr>
+                <td className="border px-4 py-2 font-bold" colSpan="3">
+                  {section}
+                </td>
+              </tr>
+              {data[section].map((item, subIndex) => (
+                <tr key={subIndex}>
+                  <td className="border px-4 py-2">{item.title}</td>
+                  <td className="border px-4 py-2">{item.areaM}</td>
+                  <td className="border px-4 py-2">{item.areaSft || "-"}</td>
+                </tr>
+              ))}
+            </React.Fragment>
+          ))}
         </tbody>
       </table>
     </div>
   );
 };
 
-export default AreaCalculationTable;
+export default AreaCalculation;
