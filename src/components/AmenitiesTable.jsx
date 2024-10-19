@@ -76,14 +76,14 @@ const AmenitiesMap = () => {
   };
 
   return (
-    <div className="container mx-auto px-4 py-6">
+    <div className="container px-4 md:px-0 mt-6">
       {/* Tab Buttons */}
-      <div className="flex justify-between border-b pb-4 mb-4">
+      <div className="flex flex-wrap md:text-sm text-sm justify-between border-b ">
         <button
           onClick={() =>
             handleTabChange("Transportation", transportation[0].map)
           }
-          className={`px-4 py-2 ${
+          className={`md:px-4 md:py-2 mb-3 ${
             activeTab === "Transportation"
               ? "border-b-2 border-gray-700 text-gray-700"
               : "text-gray-500"
@@ -93,7 +93,7 @@ const AmenitiesMap = () => {
         </button>
         <button
           onClick={() => handleTabChange("Food", food[0].map)}
-          className={`px-4 py-2 ${
+          className={`md:px-4 md:py-2 mb-3 ${
             activeTab === "Food"
               ? "border-b-2 border-gray-700 text-gray-700"
               : "text-gray-500"
@@ -103,7 +103,7 @@ const AmenitiesMap = () => {
         </button>
         <button
           onClick={() => handleTabChange("Entertainment", entertainment[0].map)}
-          className={`px-4 py-2 ${
+          className={`md:px-4 md:py-2 mb-3 ${
             activeTab === "Entertainment"
               ? "border-b-2 border-gray-700 text-gray-700"
               : "text-gray-500"
@@ -113,7 +113,7 @@ const AmenitiesMap = () => {
         </button>
         <button
           onClick={() => handleTabChange("Hospitals", hospitals[0].map)}
-          className={`px-4 py-2 ${
+          className={`md:px-4 md:py-2 mb-3 ${
             activeTab === "Hospitals"
               ? "border-b-2 border-gray-700 text-gray-700"
               : "text-gray-500"
@@ -126,7 +126,9 @@ const AmenitiesMap = () => {
       {/* Tab Content */}
       {activeTab === "Transportation" && (
         <div>
-          <h3 className="text-lg font-semibold mb-2">Transportation</h3>
+          <h3 className="text-base md:text-lg font-semibold mb-2">
+            Transportation
+          </h3>
           <ul>
             {transportation.map((item, index) => (
               <li
@@ -145,7 +147,7 @@ const AmenitiesMap = () => {
 
       {activeTab === "Food" && (
         <div>
-          <h3 className="text-lg font-semibold mb-2">Food</h3>
+          <h3 className="text-base md:text-lg font-semibold mb-2">Food</h3>
           <ul>
             {food.map((item, index) => (
               <li
@@ -164,7 +166,9 @@ const AmenitiesMap = () => {
 
       {activeTab === "Entertainment" && (
         <div>
-          <h3 className="text-lg font-semibold mb-2">Entertainment</h3>
+          <h3 className="text-base md:text-lg font-semibold mb-2">
+            Entertainment
+          </h3>
           <ul>
             {entertainment.map((item, index) => (
               <li
@@ -183,7 +187,7 @@ const AmenitiesMap = () => {
 
       {activeTab === "Hospitals" && (
         <div>
-          <h3 className="text-lg font-semibold mb-2">Hospitals</h3>
+          <h3 className="text-base md:text-lg font-semibold mb-2">Hospitals</h3>
           <ul>
             {hospitals.map((item, index) => (
               <li
@@ -205,8 +209,7 @@ const AmenitiesMap = () => {
         {activeMapUrl && (
           <iframe
             src={activeMapUrl}
-            width="600"
-            height="300"
+            className="w-full h-72 "
             style={{ border: 0 }}
             allowFullScreen=""
             loading="lazy"

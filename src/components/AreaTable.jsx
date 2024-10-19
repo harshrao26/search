@@ -53,32 +53,59 @@ const RentalProperties = () => {
   ];
 
   return (
-    <div className="container mx-auto  py-6">
-      <h2 className="text-2xl font-bold mb-4">Rental Properties</h2>
-      <table className="min-w-full bg-white border">
-        <thead>
-          <tr>
-            <th className="border px-4 py-2">Category</th>
-            <th className="border px-4 py-2">Building</th>
-            <th className="border px-4 py-2">Floor</th>
-            <th className="border px-4 py-2">Builtup/Plinth Area (SFT)</th>
-            <th className="border px-4 py-2">Carpet Area (SFT)</th>
-            <th className="border px-4 py-2">Rentable Area (SFT)</th>
-          </tr>
-        </thead>
-        <tbody>
-          {data.map((item, index) => (
-            <tr key={index} className="border">
-              <td className="border px-4 py-2">{item.category}</td>
-              <td className="border px-4 py-2">{item.building}</td>
-              <td className="border px-4 py-2">{item.floor}</td>
-              <td className="border px-4 py-2">{item.builtup}</td>
-              <td className="border px-4 py-2">{item.carpet}</td>
-              <td className="border px-4 py-2">{item.rentable}</td>
+    <div className="container md:w-full w-[100vw] px-2 md:px-0 mt-6">
+      <h2 className="text-2xl md:text-3xl font-bold mb-4">Rental Properties</h2>
+      {/* Responsive Table Container */}
+      <div className="">
+        <table className=" bg-white border">
+          <thead>
+            <tr>
+              <th className="border md:px-4 py-2 text-xs md:text-sm">
+                Category
+              </th>
+              <th className="border md:px-4 py-2 text-xs md:text-sm">
+                Building
+              </th>
+              <th className="border md:px-4 py-2 text-xs md:text-sm">
+                Floor
+              </th>
+              <th className="border md:px-4 py-2 text-xs md:text-sm">
+                Builtup/Plinth Area (SFT)
+              </th>
+              <th className="border md:px-4 py-2 text-xs md:text-sm">
+                Carpet Area (SFT)
+              </th>
+              <th className="border md:px-4 py-2 text-xs md:text-sm">
+                Rentable Area (SFT)
+              </th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {data.map((item, index) => (
+              <tr key={index} className="border">
+                <td className="border md:px-4 py-2 text-xs md:text-sm">
+                  {item.category}
+                </td>
+                <td className="border md:px-4 py-2 text-xs md:text-sm">
+                  {item.building}
+                </td>
+                <td className="border md:px-4 py-2 text-xs md:text-sm">
+                  {item.floor}
+                </td>
+                <td className="border md:px-4 py-2 text-xs md:text-sm">
+                  {item.builtup}
+                </td>
+                <td className="border md:px-4 py-2 text-xs md:text-sm">
+                  {item.carpet}
+                </td>
+                <td className="border md:px-4 py-2 text-xs md:text-sm">
+                  {item.rentable}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };

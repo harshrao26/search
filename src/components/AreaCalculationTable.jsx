@@ -26,35 +26,53 @@ const AreaCalculation = () => {
   };
 
   return (
-    <div className="container mx-  py-6">
-      <h2 className="text-2xl font-bold mb-4">Area Calculation</h2>
-      <table className=" bg-white border">
-        <thead>
-          <tr>
-            <th className="border px-4 py-2">Description</th>
-            <th className="border px-4 py-2">Area in M²</th>
-            <th className="border px-4 py-2">Area in SFT</th>
-          </tr>
-        </thead>
-        <tbody>
-          {Object.keys(data).map((section, index) => (
-            <React.Fragment key={index}>
-              <tr>
-                <td className="border px-4 py-2 font-bold" colSpan="3">
-                  {section}
-                </td>
-              </tr>
-              {data[section].map((item, subIndex) => (
-                <tr key={subIndex}>
-                  <td className="border px-4 py-2">{item.title}</td>
-                  <td className="border px-4 py-2">{item.areaM}</td>
-                  <td className="border px-4 py-2">{item.areaSft || "-"}</td>
+    <div className="container md:w-full w-[100vw] px-2 md:px-0 mt-6">
+      <h2 className="text-2xl md:text-3xl font-bold mb-4">Area Calculation</h2>
+      {/* Responsive Table Container */}
+      <div className="overflow-x-auto">
+        <table className="min-w-full bg-white border">
+          <thead>
+            <tr>
+              <th className="border px-2 md:px-4 py-2 text-xs md:text-sm">
+                Description
+              </th>
+              <th className="border px-2 md:px-4 py-2 text-xs md:text-sm">
+                Area in M²
+              </th>
+              <th className="border px-2 md:px-4 py-2 text-xs md:text-sm">
+                Area in SFT
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {Object.keys(data).map((section, index) => (
+              <React.Fragment key={index}>
+                <tr>
+                  <td
+                    className="border px-2 md:px-4 py-2 font-bold bg-gray-200"
+                    colSpan="3"
+                  >
+                    {section}
+                  </td>
                 </tr>
-              ))}
-            </React.Fragment>
-          ))}
-        </tbody>
-      </table>
+                {data[section].map((item, subIndex) => (
+                  <tr key={subIndex}>
+                    <td className="border px-2 md:px-4 py-2 text-xs md:text-sm">
+                      {item.title}
+                    </td>
+                    <td className="border px-2 md:px-4 py-2 text-xs md:text-sm">
+                      {item.areaM}
+                    </td>
+                    <td className="border px-2 md:px-4 py-2 text-xs md:text-sm">
+                      {item.areaSft || "-"}
+                    </td>
+                  </tr>
+                ))}
+              </React.Fragment>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };

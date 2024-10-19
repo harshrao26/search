@@ -40,8 +40,8 @@ const Info = () => {
   };
 
   return (
-    <div className="w-full flex px-8 gap-8">
-      <div className="w-1/2">
+    <div className="w-full flex md:px-8 gap-8">
+      <div className="md:w-1/2">
         <ImageGallery />
         <AreaTable />
         <AreaCalculationTable />
@@ -49,7 +49,7 @@ const Info = () => {
         <AboutProp />
         <Consultants />
       </div>
-      <div className="w-1/2 mt-10">
+      <div className="md:w-1/2 md:block hidden mt-10">
         <div className="sticky right-0 top-20 fixed">
           <h1 className="text-3xl font-semibold text-gray-800 mb-4">
             Jaipuria Towers

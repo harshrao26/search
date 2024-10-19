@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { MdArrowBackIos, MdArrowForwardIos } from "react-icons/md"; // for arrows
-import img from '../../public/img.png'
-import img2 from '../../public/img2.png'
-import img3 from '../../public/img3.png'
+import img from "../../public/img.png";
+import img2 from "../../public/img2.png";
+import img3 from "../../public/img3.png";
+
 const ImageCarousel = ({ images }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -26,24 +27,24 @@ const ImageCarousel = ({ images }) => {
   };
 
   return (
-    <div className="relative w-full max-w-4xl mx-auto">
+    <div className="w-[100vw] md:w-full">
       {/* Main Image Display */}
       <div className="relative">
         <img
           src={images[currentIndex].url}
           alt={`Slide ${currentIndex}`}
-          className="w-full h-96 object-cover rounded-lg"
+          className="w-full h-64 md:h-96 object-cover rounded-lg"
         />
         {/* Left Arrow */}
         <button
-          className="absolute top-1/2 left-4 text-3xl text-white bg-gray-800 rounded-full p-2"
+          className="absolute top-1/2 left-2 md:left-4 text-2xl md:text-3xl text-white bg-gray-800 rounded-full p-1 md:p-2 transform -translate-y-1/2"
           onClick={prevSlide}
         >
           <MdArrowBackIos />
         </button>
         {/* Right Arrow */}
         <button
-          className="absolute top-1/2 right-4 text-3xl text-white bg-gray-800 rounded-full p-2"
+          className="absolute top-1/2 right-2 md:right-4 text-2xl md:text-3xl text-white bg-gray-800 rounded-full p-1 md:p-2 transform -translate-y-1/2"
           onClick={nextSlide}
         >
           <MdArrowForwardIos />
@@ -57,7 +58,7 @@ const ImageCarousel = ({ images }) => {
             key={index}
             src={image.url}
             alt={`Thumbnail ${index}`}
-            className={`w-16 h-16 mx-1 cursor-pointer border-2 ${
+            className={`w-12 h-12 md:w-16 md:h-16 mx-1 cursor-pointer border-2 ${
               currentIndex === index ? "border-green-500" : "border-gray-300"
             }`}
             onClick={() => goToSlide(index)}
@@ -69,7 +70,7 @@ const ImageCarousel = ({ images }) => {
 };
 
 // Parent Component with Filtering Functionality
-const ImageGallery = () => {
+const  ImageGallery = () => {
   const allImages = [
     {
       url: img3,
@@ -83,17 +84,12 @@ const ImageGallery = () => {
       url: img,
       category: "architecture",
     },
-
-    
   ];
 
   const [filteredImages, setFilteredImages] = useState(allImages);
 
-
-
   return (
-    <div className="mt-10">
-    
+    <div className="md:mt-10">
       <ImageCarousel images={filteredImages} />
     </div>
   );
