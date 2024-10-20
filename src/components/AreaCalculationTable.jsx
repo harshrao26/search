@@ -27,7 +27,7 @@ const AreaCalculation = () => {
 
   return (
     <div className="container md:w-full w-[100vw] px-2 md:px-0 mt-6">
-      <h2 className="text-2xl md:text-3xl font-bold mb-4">Area Calculation</h2>
+      <h2 className="text-xl md:text-2xl font-semibold mb-4">Area Calculation</h2>
       {/* Responsive Table Container */}
       <div className="overflow-x-auto">
         <table className="min-w-full bg-white border">

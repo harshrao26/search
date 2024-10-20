@@ -13,7 +13,7 @@ const ConsultantCard = () => {
 
   return (
     <div className="container px-4 md:px-0 ">
-      <h2 className="text-2xl font-bold ">Consultants</h2>
+      <h2 className="text-2xl font-semibold ">Consultants</h2>
       <div className="flex flex-wrap  gap-8">
         {consultants.map((consultant) => (
           <div key={consultant.id} className=" overflow-hidden text-center">
@@ -23,10 +23,10 @@ const ConsultantCard = () => {
               alt={`${consultant.name}'s profile`}
             />
             <div className="px-4 py-4">
-              <h3 className="text-xl font-semibold mb-2 text-gray-800">
+              <h3 className="text-base font-semibold mb-2 text-gray-800">
                 {consultant.name}
               </h3>
-              <p className="text-gray-700">{consultant.mobile}</p>
+              <p className="text-gray-700 text-sm">{consultant.mobile}</p>
             </div>
           </div>
         ))}

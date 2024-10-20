@@ -27,27 +27,28 @@ const ImageCarousel = ({ images }) => {
   };
 
   return (
-    <div className="w-[100vw] md:w-full">
+    <div className="w-[100vw] md:w-full ">
       {/* Main Image Display */}
       <div className="relative">
         <img
           src={images[currentIndex].url}
           alt={`Slide ${currentIndex}`}
-          className="w-full h-64 md:h-96 object-cover rounded-lg"
+          className="w-full h-64 md:h-[75vh] object-cover "
         />
         {/* Left Arrow */}
         <button
-          className="absolute top-1/2 left-2 md:left-4 text-2xl md:text-3xl text-white bg-gray-800 rounded-full p-1 md:p-2 transform -translate-y-1/2"
+          className="absolute top-1/2 left-2 md:left-4 text-2xl md:text-3xl text-white  rounded-full p-1 md:p-2 transform -translate-y-1/2"
           onClick={prevSlide}
         >
-          <MdArrowBackIos />
+          
+          <MdArrowBackIos className="pl-2"/>
         </button>
         {/* Right Arrow */}
         <button
-          className="absolute top-1/2 right-2 md:right-4 text-2xl md:text-3xl text-white bg-gray-800 rounded-full p-1 md:p-2 transform -translate-y-1/2"
+          className="absolute top-1/2 right-2 md:right-4 text-2xl md:text-3xl text-white  rounded-full p-1 md:p-2 transform -translate-y-1/2"
           onClick={nextSlide}
         >
-          <MdArrowForwardIos />
+          <MdArrowForwardIos size={24} className=""/>
         </button>
       </div>
 

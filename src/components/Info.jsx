@@ -16,6 +16,7 @@ const Info = () => {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [superArea, setSuperArea] = useState("");
+  const [isVisible, setIsVisible] = useState(true); // State for visibility
 
   const handleMobileChange = (e) => {
     setMobile(e.target.value);
@@ -39,9 +40,10 @@ const Info = () => {
     alert(`Name: ${name}, Email: ${email}, Super Area: ${superArea}`);
   };
 
+  
   return (
     <div className="w-full flex md:px-8 gap-8">
-      <div className="md:w-1/2">
+      <div className="md:w-[60vw]">
         <ImageGallery />
         <AreaTable />
         <AreaCalculationTable />
@@ -49,12 +51,16 @@ const Info = () => {
         <AboutProp />
         <Consultants />
       </div>
-      <div className="md:w-1/2 md:block hidden mt-10">
-        <div className="sticky right-0 top-20 fixed">
-          <h1 className="text-3xl font-semibold text-gray-800 mb-4">
+      <div
+        className={`md:w-[40vw] md:block hidden mt-10 ${
+          !isVisible ? "hidden" : ""
+        }`}
+      >
+        <div className="sticky right-0 top-20 fixed bg-[#F7F7F7] p-8">
+          <h1 className="text-2xl font-semibold text-gray-800 mb-4">
             Jaipuria Towers
           </h1>
-          <p className="flex items-center text-xl text-gray-600 mb-6 gap-2 capitalize">
+          <p className="flex items-center text-sm text-gray-600 mb-6 gap-2 capitalize">
             <MdLocationPin className="text-red-500 " size={40} /> OUTER RING
             ROAD, DOLLAR SCHEME COLONY, 1ST STAGE, BTM LAYOUT 1, BANGALORE
           </p>
@@ -68,10 +74,10 @@ const Info = () => {
               className="w-16 h-16 rounded-full shadow-md"
             />
             <div>
-              <h2 className="text-xl font-medium text-gray-700">
+              <h2 className="text-base font-medium text-gray-700">
                 Adarsh Mohan Dixit
               </h2>
-              <p className="text-gray-500">+91-7392037856</p>
+              <p className="text-gray-500 text-sm">+91-7392037856</p>
             </div>
           </div>
 
@@ -82,13 +88,13 @@ const Info = () => {
                 placeholder="Enter Your Mobile Number"
                 value={mobile}
                 onChange={handleMobileChange}
-                className="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="px-4 py-1 border border-gray-300  focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
               <button
                 onClick={handleVerify}
-                className="bg-blue-500 text-white px-4 py-2 rounded-lg shadow hover:bg-blue-600 transition duration-300"
+                className="bg-blue-500 text-sm text-white px-4 py-2  shadow hover:bg-blue-600 transition duration-300"
               >
-                Submit Enquiry
+                Make an appointment
               </button>
             </div>
           ) : (
@@ -121,7 +127,7 @@ const Info = () => {
                 type="submit"
                 className="bg-green-500 text-white px-4 py-2 rounded-lg shadow hover:bg-green-600 transition duration-300"
               >
-                Submit Enquiry
+                Make an appointment
               </button>
             </form>
           )}
