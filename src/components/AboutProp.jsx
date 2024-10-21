@@ -6,7 +6,7 @@ const AboutProperty = () => {
       <h2 className="text-xl md:text-2xl font-semibold mb-6 ">
         About this Property
       </h2>
-      <p className="text-sm md:text-base leading-relaxed text-justify mb-4">
+      <p className="text-xs md:text-sm leading-relaxed text-justify mb-4">
         This commercial office space in BTM Layout, strategically positioned
         near Outer Ring Road and Silk Board Junction, is a prime leasing
         opportunity for businesses looking for a high-demand location. The
@@ -19,20 +19,20 @@ const AboutProperty = () => {
 
       <p className="">Key amenities include:</p>
       <ul className="list-disc ml-4 md:ml-8 mt-4 space-y-4 text-justify ">
-        <li className="text-sm md:text-base">
+        <li className="text-xs md:text-sm">
           <span className="font-semibold">24 dedicated car parking spaces</span>{" "}
           and 22 bike parking spaces, ensuring hassle-free parking for employees
           and clients.
         </li>
-        <li className="text-sm md:text-base">
+        <li className="text-xs md:text-sm">
           <span className="font-semibold">One elevator</span> with a 6-passenger
           capacity for smooth vertical movement within the building.
         </li>
-        <li className="text-sm md:text-base">
+        <li className="text-xs md:text-sm">
           <span className="font-semibold">Multiple access points</span> (South,
           West, and East) for easier navigation and improved logistics.
         </li>
-        <li className="text-sm md:text-base">
+        <li className="text-xs md:text-sm">
           The building is surrounded by important landmarks and facilities, such
           as <span className="font-semibold">Vega City Mall</span> (2.5 km),{" "}
           <span className="font-semibold">Apollo Hospitals</span> (within 3 km),
@@ -41,7 +41,7 @@ const AboutProperty = () => {
         </li>
       </ul>
 
-      <p className="text-sm md:text-base leading-relaxed text-justify my-4">
+      <p className="text-xs md:text-sm leading-relaxed text-justify my-4">
         Additionally, the building’s proximity to key infrastructure projects
         like the newly inaugurated double-decker bridge and metro connectivity
         enhances its value for businesses. Its corner plot location ensures high

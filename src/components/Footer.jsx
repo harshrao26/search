@@ -6,7 +6,7 @@ import logo from "/logo.png";
 
 const Footer = () => {
   return (
-    <footer className="bg-white text-[#2362AB] py-10 px-6 md:px-8 ">
+    <footer className="bg-white text-[#2362AB] px-6 md:px-8 ">
       <div className="max-w-7xl mx-auto">
         {/* Footer Content - Grid Layout for Desktop and Flex Column for Mobile */}
         <div className="grid grid-cols-1 md:grid-cols-5 gap-2 py-8 border-t-[3px] border-b-[3px]  border-blue-600">
@@ -105,7 +105,7 @@ const Footer = () => {
         </div>
 
         {/* Footer Bottom - Links */}
-        <div className="text-center  my-10 pt-4 text-sm">
+        <div className="text-center my-4 pt-4 text-sm">
           <p className="text-gray-500">
             <Link to="/privacy-policy" className="hover:underline">
               Privacy Policy
