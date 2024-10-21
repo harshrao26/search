@@ -3,6 +3,9 @@ import { MdArrowBackIos, MdArrowForwardIos } from "react-icons/md"; // for arrow
 import img from "../../public/img.png";
 import img2 from "../../public/img2.png";
 import img3 from "../../public/img3.png";
+import img4 from "../../public/img4.png";
+import img5 from "../../public/img5.png";
+import img6 from "../../public/img6.png";
 
 const ImageCarousel = ({ images }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -83,6 +86,18 @@ const  ImageGallery = () => {
     },
     {
       url: img,
+      category: "architecture",
+    },
+    {
+      url: img4,
+      category: "architecture",
+    },
+    {
+      url: img5,
+      category: "architecture",
+    },
+    {
+      url: img6,
       category: "architecture",
     },
   ];

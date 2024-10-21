@@ -11,52 +11,32 @@ import image from "../../public/image.png";
 const Info = () => {
   const [mobile, setMobile] = useState("");
   const [isVerified, setIsVerified] = useState(false);
-  const [email, setEmail] = useState("");
+  const [verificationCode, setVerificationCode] = useState("");
   const [name, setName] = useState("");
+  const [email, setEmail] = useState(""); // Added email state
   const [superArea, setSuperArea] = useState("");
   const [isVisible, setIsVisible] = useState(true);
+  const [isLoading, setIsLoading] = useState(false); // To show loading state during API calls
 
-  const handleMobileChange = (e) => {
-    setMobile(e.target.value);
-  };
+  const handleMobileChange = (e) => setMobile(e.target.value);
+  const handleCodeChange = (e) => setVerificationCode(e.target.value);
 
-  const handleVerify = () => {
-    if (mobile === "  ") {
-      setIsVerified(true);
-      alert("Mobile number verified successfully!");
-    } else {
-      alert("Failed to verify. Please try again.");
-    }
-  };
+  useEffect(() => {
+    window.otpless = (otplessUser) => {
+      // Handle OTP-less verification success
+      const { waName, waNumber } = otplessUser; // Extract name and WhatsApp number
+      console.log(`User verified: ${waName} - ${waNumber}`);
+
+      setIsVerified(true); // Set the state to true after successful verification
+      setName(waName); // Set name from OTP-less response
+    };
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert(`Name: ${name}, Email: ${email}, Super Area: ${superArea}`);
+    // Logic to handle form submission
+    console.log({ name, email, superArea });
   };
-
-  // Scroll event listener to hide right-side div when reaching the bottom
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollTop =
-        window.pageYOffset || document.documentElement.scrollTop;
-      const windowHeight = window.innerHeight;
-      const fullHeight = document.documentElement.scrollHeight;
-
-      // Check if the user has scrolled near the bottom of the page
-      if (scrollTop + windowHeight >= fullHeight - 500) {
-        setIsVisible(false); // Hide the right-side div when near the bottom
-      } else {
-        setIsVisible(true); // Show it if not near the bottom
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    // Cleanup the event listener on unmount
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
 
   return (
     <div className="w-full flex md:px-8 gap-8">
@@ -78,7 +58,7 @@ const Info = () => {
             Jaipuria Towers
           </h1>
           <p className="flex items-center text-sm text-gray-600 mb-6 gap-2 capitalize">
-            <MdLocationPin className="text-red-500 " size={40} /> OUTER RING
+            <MdLocationPin className="text-red-500" size={40} /> OUTER RING
             ROAD, DOLLAR SCHEME COLONY, 1ST STAGE, BTM LAYOUT 1, BANGALORE
           </p>
 
@@ -94,39 +74,13 @@ const Info = () => {
               <h2 className="text-base font-medium text-gray-700">
                 Adarsh Mohan Dixit
               </h2>
-              <p className="text-gray-500 text-sm ">
-                +91-7392037856
-              </p>
+              <p className="text-gray-500 text-sm">+91-7392037856</p>
             </div>
           </div>
-          <h1 className="mb-6">
-            <p className="text-sm text-justify">
-              Adarsh is a seasoned commercial leasing expert with extensive
-              experience in helping businesses optimize their real estate
-              investments. With a deep understanding of market dynamics, leasing
-              strategies, and asset management, Adarsh excels at guiding clients
-              through complex lease negotiations, ensuring optimal space
-              utilization, and unlocking the full potential of commercial
-              properties. From identifying ideal locations to maximizing return
-              on investment, Adarsh delivers tailored solutions that drive
-              business growth and operational efficiency.
-            </p>
-          </h1>
+
           {!isVerified ? (
-            <div className="flex flex-col gap-4">
-              <input
-                type="text"
-                placeholder="Enter Your Mobile Number"
-                value={mobile}
-                onChange={handleMobileChange}
-                className="px-4 py-1 border border-gray-300  focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
-              <button
-                onClick={handleVerify}
-                className="bg-blue-500 text-sm text-white px-4 py-2  shadow hover:bg-blue-600 transition duration-300"
-              >
-                Make an appointment
-              </button>
+            <div id="otpless-login-page" className="w-96">
+              {/* OTP-less SDK will handle the login button and UI */}
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="flex flex-col gap-4">
@@ -158,7 +112,7 @@ const Info = () => {
                 type="submit"
                 className="bg-green-500 text-white px-4 py-2 rounded-lg shadow hover:bg-green-600 transition duration-300"
               >
-                Make an appointment
+                Book Your Visit
               </button>
             </form>
           )}
