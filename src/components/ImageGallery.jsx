@@ -53,7 +53,7 @@ const ImageCarousel = ({ images }) => {
       </div>
 
       {/* Thumbnails */}
-      <div className="flex justify-center mt-4">
+      <div className="flex  mt-4">
         {images.map((image, index) => (
           <img
             key={index}

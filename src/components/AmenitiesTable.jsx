@@ -127,7 +127,6 @@ const AmenitiesMap = () => {
       {activeTab === "Transportation" && (
         <div>
           <h3 className="text-base md:text-lg font-semibold mb-2">
-            Transportation
           </h3>
           <ul>
             {transportation.map((item, index) => (
@@ -147,7 +146,7 @@ const AmenitiesMap = () => {
 
       {activeTab === "Food" && (
         <div>
-          <h3 className="text-base md:text-lg font-semibold mb-2">Food</h3>
+          <h3 className="text-base md:text-lg font-semibold mb-2"></h3>
           <ul>
             {food.map((item, index) => (
               <li
@@ -167,7 +166,7 @@ const AmenitiesMap = () => {
       {activeTab === "Entertainment" && (
         <div>
           <h3 className="text-base md:text-lg font-semibold mb-2">
-            Entertainment
+            
           </h3>
           <ul>
             {entertainment.map((item, index) => (
@@ -187,7 +186,7 @@ const AmenitiesMap = () => {
 
       {activeTab === "Hospitals" && (
         <div>
-          <h3 className="text-base md:text-lg font-semibold mb-2">Hospitals</h3>
+          <h3 className="text-base md:text-lg font-semibold mb-2"></h3>
           <ul>
             {hospitals.map((item, index) => (
               <li
@@ -205,7 +204,7 @@ const AmenitiesMap = () => {
       )}
 
       {/* Google Map Iframe */}
-      <div className="mt-6">
+      <div className="mt-4">
         {activeMapUrl && (
           <iframe
             src={activeMapUrl}

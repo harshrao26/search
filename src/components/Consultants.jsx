@@ -1,5 +1,6 @@
 import React from "react";
-import image from "../../public/image.png"; // Ensure the correct path to the image
+import image from "../../public/image.png"; 
+import imagew from "../../public/imagew.png"; 
 
 const ConsultantCard = () => {
   const consultants = [
@@ -9,11 +10,17 @@ const ConsultantCard = () => {
       mobile: "+91-7392037856",
       image: image,
     },
+    {
+      id: 2,
+      name: "Swithen Thomas",
+      mobile: "+91-9044895895",
+      image: imagew,
+    },
   ];
 
   return (
-    <div className="container px-4 md:px-0 ">
-      <h2 className="text-2xl font-semibold ">Consultants</h2>
+    <div className="container px-4 md:px-0 py-6">
+      <h2 className="text-2xl font-semibold ">Leasing Experts</h2>
       <div className="flex flex-wrap  gap-8">
         {consultants.map((consultant) => (
           <div key={consultant.id} className=" overflow-hidden text-center">

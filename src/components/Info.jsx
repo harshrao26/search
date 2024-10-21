@@ -64,8 +64,8 @@ const Info = () => {
         <ImageGallery />
         <AreaTable />
         <AreaCalculationTable />
-        <AmenitiesTable />
         <AboutProp />
+        <AmenitiesTable />
         <Consultants />
       </div>
       <div
@@ -84,34 +84,34 @@ const Info = () => {
 
           <hr className="mb-6" />
 
-          <div className="flex flex-col items-center gap-4 mb-6">
+          <div className="flex gap-4 mb-6">
             <img
               src={image}
               alt="Person"
               className="w-16 h-16 rounded-full shadow-md"
             />
-            <div>
+            <div className="flex flex-col justify-center">
               <h2 className="text-base font-medium text-gray-700">
                 Adarsh Mohan Dixit
               </h2>
-              <p className="text-gray-500 text-sm text-center">+91-7392037856</p>
-            </div>
-            <h1>
-              <p className="text-sm text-justify">
-                Adarsh is a seasoned commercial leasing expert with
-                extensive experience in helping businesses optimize their real
-                estate investments. With a deep understanding of market
-                dynamics, leasing strategies, and asset management, Adarsh
-                excels at guiding clients through complex lease negotiations,
-                ensuring optimal space utilization, and unlocking the full
-                potential of commercial properties. From identifying ideal
-                locations to maximizing return on investment, Adarsh
-                delivers tailored solutions that drive business growth and
-                operational efficiency.
+              <p className="text-gray-500 text-sm ">
+                +91-7392037856
               </p>
-            </h1>
+            </div>
           </div>
-
+          <h1 className="mb-6">
+            <p className="text-sm text-justify">
+              Adarsh is a seasoned commercial leasing expert with extensive
+              experience in helping businesses optimize their real estate
+              investments. With a deep understanding of market dynamics, leasing
+              strategies, and asset management, Adarsh excels at guiding clients
+              through complex lease negotiations, ensuring optimal space
+              utilization, and unlocking the full potential of commercial
+              properties. From identifying ideal locations to maximizing return
+              on investment, Adarsh delivers tailored solutions that drive
+              business growth and operational efficiency.
+            </p>
+          </h1>
           {!isVerified ? (
             <div className="flex flex-col gap-4">
               <input
