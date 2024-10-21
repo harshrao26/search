@@ -6,16 +6,48 @@ const AboutProperty = () => {
       <h2 className="text-xl md:text-2xl font-semibold mb-6 ">
         About this Property
       </h2>
-      <p className="text-sm md:text-base leading-relaxed  mb-4">
-        <strong>WeWork, Vajram Esteva Complex</strong> is surrounded by global
-        businesses and is located near Adarsh Palm Retreat. The space features
-        walls adorned with art, vibrant lounges, modern conference rooms, and
-        private cabins, providing a relaxed and professional atmosphere.
+      <p className="text-sm md:text-base leading-relaxed text-justify mb-4">
+        This commercial office space in BTM Layout, strategically positioned
+        near Outer Ring Road and Silk Board Junction, is a prime leasing
+        opportunity for businesses looking for a high-demand location. The
+        property is designed with a low-rise structure comprising one basement,
+        a ground floor, and three upper floors, along with a terrace featuring a
+        pantry. With a total built-up area of 39,834 sq ft, the building
+        provides ample space for multiple office setups, making it ideal for
+        companies in the IT, tech, or coworking sectors.
       </p>
-      <p className="text-sm md:text-base leading-relaxed  mb-4">
-        Commuting to this location is a breeze with on-site parking and easy
-        connectivity via various modes of public transportation, making it an
-        ideal choice for modern businesses.
+
+      <p className="">Key amenities include:</p>
+      <ul className="list-disc ml-4 md:ml-8 mt-4 space-y-4 text-justify ">
+        <li className="text-sm md:text-base">
+          <span className="font-semibold">24 dedicated car parking spaces</span>{" "}
+          and 22 bike parking spaces, ensuring hassle-free parking for employees
+          and clients.
+        </li>
+        <li className="text-sm md:text-base">
+          <span className="font-semibold">One elevator</span> with a 6-passenger
+          capacity for smooth vertical movement within the building.
+        </li>
+        <li className="text-sm md:text-base">
+          <span className="font-semibold">Multiple access points</span> (South,
+          West, and East) for easier navigation and improved logistics.
+        </li>
+        <li className="text-sm md:text-base">
+          The building is surrounded by important landmarks and facilities, such
+          as <span className="font-semibold">Vega City Mall</span> (2.5 km),{" "}
+          <span className="font-semibold">Apollo Hospitals</span> (within 3 km),
+          and <span className="font-semibold">Treebo Trip Elmas Hotel</span> (2
+          km), which add to the convenience for employees and visitors.
+        </li>
+      </ul>
+
+      <p className="text-sm md:text-base leading-relaxed text-justify my-4">
+        Additionally, the building’s proximity to key infrastructure projects
+        like the newly inaugurated double-decker bridge and metro connectivity
+        enhances its value for businesses. Its corner plot location ensures high
+        visibility and ease of access from the Outer Ring Road, making it a
+        highly attractive leasing option for companies looking to establish a
+        strong presence in Bangalore.
       </p>
     </div>
   );

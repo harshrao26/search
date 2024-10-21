@@ -1,15 +1,16 @@
-import React from "react";
+import React,{useEffect} from "react";
 import { MdLocationPin } from "react-icons/md";
 import image from "../../public/image.png";
 
 const Contact = () => {
+   
   return (
     <div>
-      <div className=" right-0 top-20 ">
-        <h1 className="text-3xl font-semibold text-gray-800 mb-4">
+      <div className="right-0 top-20 ">
+        <h1 className="text-xl font-semibold text-gray-800 mb-4">
           Jaipuria Towers
         </h1>
-        <p className="flex items-center text-xl text-gray-600 mb-6 gap-2 capitalize">
+        <p className="flex items-center text-sm text-gray-600 mb-6 gap-2 capitalize">
           <MdLocationPin className="text-red-500 " size={40} /> OUTER RING ROAD,
           DOLLAR SCHEME COLONY, 1ST STAGE, BTM LAYOUT 1, BANGALORE
         </p>
@@ -26,7 +27,7 @@ const Contact = () => {
             <h2 className="text-xl font-medium text-gray-700">
               Adarsh Mohan Dixit
             </h2>
-            <p className="text-gray-500">+91-7392037856</p>
+            <p className="text-gray-500 text-sm">+91-7392037856</p>
           </div>
         </div>
 
@@ -37,8 +38,7 @@ const Contact = () => {
             className="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
           <button className="bg-blue-500 text-white px-4 py-2 rounded-lg shadow hover:bg-blue-600 transition duration-300">
-            Share Interest
-          </button>
+Make an appointment          </button>
         </div>
       </div>
       

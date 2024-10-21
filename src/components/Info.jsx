@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ImageGallery from "./ImageGallery";
 import AreaTable from "./AreaTable";
 import AreaCalculationTable from "./AreaCalculationTable";
@@ -7,8 +7,6 @@ import AboutProp from "./AboutProp";
 import Consultants from "./Consultants";
 import { MdLocationPin } from "react-icons/md";
 import image from "../../public/image.png";
-// Import OTP-less if available
-// import { otplessLogin } from "otpless-sdk";
 
 const Info = () => {
   const [mobile, setMobile] = useState("");
@@ -16,16 +14,13 @@ const Info = () => {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [superArea, setSuperArea] = useState("");
-  const [isVisible, setIsVisible] = useState(true); // State for visibility
+  const [isVisible, setIsVisible] = useState(true);
 
   const handleMobileChange = (e) => {
     setMobile(e.target.value);
   };
 
   const handleVerify = () => {
-    // Replace with the OTP-less verification method
-    // Example: otplessLogin({ phoneNumber: mobile, successCallback, errorCallback })
-    // This is a mockup for the purpose of this example
     if (mobile === "  ") {
       setIsVerified(true);
       alert("Mobile number verified successfully!");
@@ -36,11 +31,33 @@ const Info = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission logic here
     alert(`Name: ${name}, Email: ${email}, Super Area: ${superArea}`);
   };
 
-  
+  // Scroll event listener to hide right-side div when reaching the bottom
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop =
+        window.pageYOffset || document.documentElement.scrollTop;
+      const windowHeight = window.innerHeight;
+      const fullHeight = document.documentElement.scrollHeight;
+
+      // Check if the user has scrolled near the bottom of the page
+      if (scrollTop + windowHeight >= fullHeight - 500) {
+        setIsVisible(false); // Hide the right-side div when near the bottom
+      } else {
+        setIsVisible(true); // Show it if not near the bottom
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    // Cleanup the event listener on unmount
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <div className="w-full flex md:px-8 gap-8">
       <div className="md:w-[60vw]">
@@ -67,7 +84,7 @@ const Info = () => {
 
           <hr className="mb-6" />
 
-          <div className="flex items-center gap-6 mb-6">
+          <div className="flex flex-col items-center gap-4 mb-6">
             <img
               src={image}
               alt="Person"
@@ -77,8 +94,22 @@ const Info = () => {
               <h2 className="text-base font-medium text-gray-700">
                 Adarsh Mohan Dixit
               </h2>
-              <p className="text-gray-500 text-sm">+91-7392037856</p>
+              <p className="text-gray-500 text-sm text-center">+91-7392037856</p>
             </div>
+            <h1>
+              <p className="text-sm text-justify">
+                Adarsh is a seasoned commercial leasing expert with
+                extensive experience in helping businesses optimize their real
+                estate investments. With a deep understanding of market
+                dynamics, leasing strategies, and asset management, Adarsh
+                excels at guiding clients through complex lease negotiations,
+                ensuring optimal space utilization, and unlocking the full
+                potential of commercial properties. From identifying ideal
+                locations to maximizing return on investment, Adarsh
+                delivers tailored solutions that drive business growth and
+                operational efficiency.
+              </p>
+            </h1>
           </div>
 
           {!isVerified ? (
