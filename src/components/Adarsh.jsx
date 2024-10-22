@@ -132,14 +132,7 @@ const Adarsh = () => {
           className="px-4 py-2 border border-gray-300  focus:outline-none focus:ring-2 focus:ring-blue-500"
           required
         />
-        <input
-          type="text"
-          placeholder="Enter Super Area"
-          value={superArea}
-          onChange={(e) => setSuperArea(e.target.value)}
-          className="px-4 py-2 border border-gray-300  focus:outline-none focus:ring-2 focus:ring-blue-500"
-          required
-        />
+       
         <button
           type="submit"
           className="bg-blue-500 text-white px-4 py-2  shadow hover:bg-blue-600 transition duration-300"

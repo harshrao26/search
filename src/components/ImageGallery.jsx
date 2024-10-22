@@ -6,6 +6,9 @@ import img3 from "../../public/img3.png";
 import img4 from "../../public/img4.png";
 import img5 from "../../public/img5.png";
 import img6 from "../../public/img6.png";
+import img7 from "../../public/img7.png";
+import img8 from "../../public/img8.png";
+import img9 from "../../public/img9.png";
 
 const ImageCarousel = ({ images }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -98,6 +101,18 @@ const  ImageGallery = () => {
     },
     {
       url: img6,
+      category: "architecture",
+    },
+    {
+      url: img7,
+      category: "architecture",
+    },
+    {
+      url: img8,
+      category: "architecture",
+    },
+    {
+      url: img9,
       category: "architecture",
     },
   ];
