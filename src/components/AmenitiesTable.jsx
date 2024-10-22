@@ -17,15 +17,15 @@ const AmenitiesMap = () => {
 
   const transportation = [
     {
-      name: "BTM Layout Metro Station",
-      distance: "1.5 km",
+      name: "Silk Board Metro Station",
+      distance: "0.4 km",
       icon: <FaTrain />,
-      location: "BTM Layout Metro Station, Bangalore",
+      location: "Silk Board Metro Station, Bangalore",
       map: "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15555.429602646158!2d77.6081222!3d12.9168853!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae15187f119535%3A0x41d62e768ececbe3!2sBTM%20metro%20station!5e0!3m2!1sen!2sin!4v1729244639605!5m2!1sen!2sin",
     },
     {
       name: "Silk Board Junction",
-      distance: "0.4 km",
+      distance: "0.5 km",
       icon: <FaBus />,
       location: "Silk Board Junction, Bangalore",
       map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.8622870073436!2d77.62080777507546!3d12.916571387393756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae14f13f1f312d%3A0x490fdf03dd2dcb5d!2sSilk%20Board%20junction%2C%20Sector%206%2C%20HSR%20Layout%2C%20Bengaluru%2C%20Karnataka%20560102!5e0!3m2!1sen!2sin!4v1729244721077!5m2!1sen!2sin",
