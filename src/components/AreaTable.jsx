@@ -52,9 +52,25 @@ const RentalProperties = () => {
     },
   ];
 
+  // Helper function to calculate total area
+  const calculateTotal = (key) => {
+    return data
+      .reduce((total, item) => {
+        const value = parseFloat(item[key]);
+        return total + (isNaN(value) ? 0 : value);
+      }, 0)
+      .toFixed(2);
+  };
+
+  const totalBuiltup = calculateTotal("builtup");
+  const totalCarpet = calculateTotal("carpet");
+  const totalRentable = calculateTotal("rentable");
+
   return (
     <div className="container md:w-full w-[100vw] px-2 md:px-0 mt-6">
-      <h2 className="text-xl md:text-2xl font-semibold mb-4">Rental Properties</h2>
+      <h2 className="text-xl md:text-2xl font-semibold mb-4">
+        Rental Properties
+      </h2>
       {/* Responsive Table Container */}
       <div className="">
         <table className=" bg-white border">
@@ -66,9 +82,7 @@ const RentalProperties = () => {
               <th className="border md:px-4 py-2 text-xs md:text-sm">
                 Building
               </th>
-              <th className="border md:px-4 py-2 text-xs md:text-sm">
-                Floor
-              </th>
+              <th className="border md:px-4 py-2 text-xs md:text-sm">Floor</th>
               <th className="border md:px-4 py-2 text-xs md:text-sm">
                 Builtup/Plinth Area (SFT)
               </th>
@@ -103,6 +117,24 @@ const RentalProperties = () => {
                 </td>
               </tr>
             ))}
+            {/* Total row */}
+            <tr className="border font-bold bg-[#E5E7EB]">
+              <td
+                className="border md:px-4 py-2 text-xs md:text-sm font-semibold"
+                colSpan="3"
+              >
+                Total
+              </td>
+              <td className="border md:px-4 py-2 text-xs font-semibold md:text-sm">
+                {totalBuiltup}
+              </td>
+              <td className="border md:px-4 py-2 text-xs font-semibold md:text-sm">
+                {totalCarpet}
+              </td>
+              <td className="border md:px-4 py-2 text-xs font-semibold md:text-sm">
+                {totalRentable}
+              </td>
+            </tr>
           </tbody>
         </table>
       </div>
