@@ -12,6 +12,7 @@ const Adarsh = () => {
   const [superArea, setSuperArea] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [isReadMore, setIsReadMore] = useState(false); // State to toggle Read More
 
   // Handle form submission
   const handleSubmit = async (e) => {
@@ -40,8 +41,6 @@ const Adarsh = () => {
       // Send data to the webhook
       await axios.post(
         "https://hook.eu2.make.com/dqori4xhhdjne672pnnq7ik34b6xftst",
-
-        
         {
           name: name,
           email: email,
@@ -86,14 +85,14 @@ const Adarsh = () => {
       <h1 className="text-2xl font-semibold text-gray-800 mb-4">
         Jaipuria Towers
       </h1>
-      <p className="flex items-center text-sm text-gray-600 mb-6 gap-2 capitalize">
+      <p className="flex items-center text-sm text-gray-600 md:mb-6 mb-3 gap-2 capitalize">
         <MdLocationPin className="text-red-500" size={40} /> OUTER RING ROAD,
         DOLLAR SCHEME COLONY, 1ST STAGE, BTM LAYOUT 1, BANGALORE
       </p>
 
-      <hr className="mb-6" />
+      <hr className="md:mb-6 mb-3" />
 
-      <div className="flex gap-4 mb-6">
+      <div className="flex gap-4 md:mb-6 mb-3">
         <img
           src={image}
           alt="Person"
@@ -106,6 +105,19 @@ const Adarsh = () => {
           <p className="text-gray-500 text-sm">+91-7392037856</p>
         </div>
       </div>
+
+      {/* Description section with Read More */}
+      <h1 className="pb-6 md:text-sm text-xs ">
+        {isReadMore
+          ? "Adarsh is an expert in commercial leasing, helping businesses optimize their real estate investments through strategic lease negotiations and space utilization. His deep knowledge of market trends and asset management ensures tailored solutions that drive growth and maximize returns."
+          : "Adarsh is an expert in commercial leasing, helping businesses optimize their real estate investments through strategic lease negotiations and space utilization."}
+        <span
+          className="text-blue-500 cursor-pointer ml-2"
+          onClick={() => setIsReadMore(!isReadMore)}
+        >
+          {isReadMore ? "Read Less" : "Read More"}
+        </span>
+      </h1>
 
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
         <input
@@ -132,7 +144,7 @@ const Adarsh = () => {
           className="px-4 py-2 border border-gray-300  focus:outline-none focus:ring-2 focus:ring-blue-500"
           required
         />
-       
+
         <button
           type="submit"
           className="bg-blue-500 text-white px-4 py-2  shadow hover:bg-blue-600 transition duration-300"
@@ -145,7 +157,7 @@ const Adarsh = () => {
         <div className="text-blue-600 mt-4">
           Appointment request successfully submitted!
         </div>
-      )}  
+      )}
     </div>
   );
 };
