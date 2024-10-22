@@ -8,8 +8,8 @@ const AboutProperty = () => {
   };
 
   return (
-    <div className="container px-4 md:px-0 mt-6">
-      <h2 className="text-xl md:text-2xl font-semibold mb-6 flex gap-2 ">
+    <div className="container px-4 md:px-0 mt-6 md:w-full w-[100vw]">
+      <h2 className="text-xl md:text-2xl font-semibold  flex gap-2 ">
         About this Property <DownloadButton />
       </h2>
       <p className="text-xs md:text-sm leading-relaxed text-justify my-4">

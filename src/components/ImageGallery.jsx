@@ -105,7 +105,7 @@ const  ImageGallery = () => {
   const [filteredImages, setFilteredImages] = useState(allImages);
 
   return (
-    <div className="md:mt-10">
+    <div className="">
       <ImageCarousel images={filteredImages} />
     </div>
   );
