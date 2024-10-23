@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import OtpVerification from "./OtpVerification";
 
 const QueryForm = () => {
   const [isVerified, setIsVerified] = useState(false);
