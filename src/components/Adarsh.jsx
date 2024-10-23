@@ -9,7 +9,6 @@ const Adarsh = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [mobile, setMobile] = useState("");
-  const [superArea, setSuperArea] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [isReadMore, setIsReadMore] = useState(false); // State to toggle Read More
@@ -18,13 +17,10 @@ const Adarsh = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Validate super area
-    if (parseInt(superArea) < 3500) {
-      alert("Super Area must be at least 3500 sq. ft.");
-      return;
-    }
-
     setIsLoading(true); // Show loading spinner
+
+    // Get current date
+    const currentDate = new Date().toLocaleDateString(); // Format as "MM/DD/YYYY" or "DD/MM/YYYY" depending on locale
 
     // Prepare email parameters
     const emailParams = {
@@ -32,20 +28,20 @@ const Adarsh = () => {
       to_name: "Admin",
       phone: mobile,
       email: email,
-      areaSuper: superArea,
-      message: "Here is the information about the property",
-      subject: "[IMPORTANT] Here is the information about the property",
+      inquiry_date: currentDate, // Automatically generated date
+      message: "Here is the inquiry information",
+      subject: "[IMPORTANT] Inquiry Information",
     };
 
     try {
       // Send data to the webhook
       await axios.post(
-        "https://hook.eu2.make.com/dqori4xhhdjne672pnnq7ik34b6xftst",
+        "https://hook.eu2.make.com/6irg7ga4tqbtvzvs14axtc11qs7mdk6i",
         {
           name: name,
           email: email,
           phone: mobile,
-          areaSuper: superArea,
+          inquiry_date: currentDate, // Automatically generated date
         }
       );
 
@@ -63,7 +59,6 @@ const Adarsh = () => {
           setName("");
           setEmail("");
           setMobile("");
-          setSuperArea("");
           setTimeout(() => {
             setIsSuccess(false); // Hide success popup after 3 seconds
           }, 3000);
